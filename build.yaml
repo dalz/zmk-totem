@@ -1,6 +1,7 @@
 include:
   - board: seeeduino_xiao_ble
     shield: totem_dongle
+    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: totem_left
     # remove to disable dongle (maybe also settings_reset)
