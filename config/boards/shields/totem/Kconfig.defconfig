@@ -1,41 +1,48 @@
-if SHIELD_MY_KEYBOARD_DONGLE
+config ZMK_SPLIT
+    default y
 
 config ZMK_KEYBOARD_NAME
     default "TOTEM"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
 
-config ZMK_SPLIT
-    default y
+# if SHIELD_MY_KEYBOARD_DONGLE
 
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
+# config ZMK_KEYBOARD_NAME
+#     default "TOTEM"
 
-# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
-config BT_MAX_CONN
-    default 2
+# config ZMK_SPLIT_ROLE_CENTRAL
+#     default y
 
-# Set this to the same number as BT_MAX_CONN
-config BT_MAX_PAIRED
-    default 2
+# config ZMK_SPLIT
+#     default y
 
-endif
+# config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+#     default 2
 
-if SHIELD_TOTEM_LEFT
+# # Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+# config BT_MAX_CONN
+#     default 2
 
-config ZMK_KEYBOARD_NAME
-    default "TOTEM"
+# # Set this to the same number as BT_MAX_CONN
+# config BT_MAX_PAIRED
+#     default 2
 
-# overridden in build.yml
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+# endif
 
-endif
+# if SHIELD_TOTEM_LEFT
 
-if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
+# config ZMK_KEYBOARD_NAME
+#     default "TOTEM"
 
-config ZMK_SPLIT
-    default y
+# # overridden in build.yml
+# config ZMK_SPLIT_ROLE_CENTRAL
+#     default y
 
-endif
+# endif
+
+# if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
+
+# config ZMK_SPLIT
+#     default y
+
+# endif
