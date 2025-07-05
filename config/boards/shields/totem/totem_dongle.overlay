@@ -14,5 +14,5 @@
 };
 
 &kscan0 {
-    col-gpios = ;
+    col-gpios = <>;
 };
