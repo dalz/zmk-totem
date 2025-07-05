@@ -12,7 +12,3 @@
         events = <0>;
     };
 };
-
-&kscan0 {
-    col-gpios = <>;
-};
