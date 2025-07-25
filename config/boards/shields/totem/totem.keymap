@@ -56,15 +56,15 @@
         };
     };
 
-    macros {
-        dbl: dbl {
-            display-name = "double";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
-                       <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
-        };
-    };
+    // macros {
+    //     dbl: dbl {
+    //         display-name = "double";
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <1>;
+    //         bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
+    //                    <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
+    //   };
+    // };
 
     keymap {
         compatible = "zmk,keymap";
