@@ -60,6 +60,7 @@
             hold-trigger-on-release;
             hold-while-undecided;
         };
+    };
 
     lingers {
         LINGER(li, &kp, &kp)
