@@ -21,6 +21,7 @@
     compatible = "zmk,behavior-hold-tap"; \
     #binding-cells = <args>;              \
     flavor = "tap-preferred";             \
+    tapping-term-ms = <200>;              \
     bindings = <hold>, <tap>;
 
 / {
