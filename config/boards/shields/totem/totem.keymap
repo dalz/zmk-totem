@@ -53,7 +53,7 @@
       };
 
       li: linger       { LINGER(2, &kp, &kp)   };
-      // Q_or_Qu: Q_or_Qu { LINGER(0, &Qu, &kp Q) };
+      Q_or_Qu: Q_or_Qu { LINGER(0, &Qu, &kp Q) };
     };
 
     combos {
@@ -89,7 +89,7 @@
 
                &kp F        &kp P        &kp D        &kp L        &kp X            &kp SEMI     &kp U        &kp O        &kp Y        &kp B
                &hml LGUI S  &hml LALT N  &hml LCTRL T &hml LSHFT H &kp K            &kp COMMA    &mt RSHFT A  &mt RCTRL E  &mt RALT I   &mt RGUI C
-  &kp Z        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Qu
+  &kp Z        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Q_or_Qu
                                          &kp TAB      &kp R        &lt NAV RET      &kp BSPC     &kp SPACE    &lt SYM UNDER
                         >;
         };
