@@ -53,7 +53,7 @@
       };
 
       li: linger       { LINGER(2, &kp, &kp)   };
-      Q_or_Qu: Q_or_Qu { LINGER(0, &Qu, &kp Q) };
+      Q_or_Qu: Q_or_Qu { LINGER(0, &kp U, &kp Q) };
     };
 
     combos {
