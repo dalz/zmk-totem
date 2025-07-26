@@ -68,7 +68,8 @@
         Qu: Qu {
             display-name = "Qu";
             compatible = "zmk,behavior-macro";
-            bindings = <&kp Q>, <&macro_release &kp LSHFT> , <&macro_release &kp RSHFT>, <&kp U>;
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>;
         };
     //     dbl: dbl {
     //         display-name = "double";
