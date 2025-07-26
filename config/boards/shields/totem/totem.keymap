@@ -85,7 +85,7 @@
     };
 
     macros {
-        MACRO(Q_or_Qu, <&Q_or_Qu_impl 0 0>)
+        // MACRO(Q_or_Qu, <&Q_or_Qu_impl 0 0>)
 
     //     dbl: dbl {
     //         display-name = "double";
