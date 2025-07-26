@@ -17,9 +17,9 @@
 #define O_AC RA(COMMA)
 #define U_AC RA(H)
 
-#define LINGER(args, hold, tap)           \
+#define LINGER(hold, tap)                 \
     compatible = "zmk,behavior-hold-tap"; \
-    binding-cells = <args>;              \
+    binding-cells = <2>;                  \
     flavor = "tap-preferred";             \
     tapping-term-ms = <200>;              \
     bindings = <hold>, <tap>;
@@ -52,8 +52,8 @@
           hold-while-undecided;
       };
 
-      li: linger { LINGER(2, &kp, &kp)   };
-      Q_or_Qu_impl: Q_or_Qu_impl { LINGER(0, &Qu, &kp Q) };
+      li: linger { LINGER(&kp, &kp) };
+      Q_or_Qu_impl: Q_or_Qu_impl { LINGER(&Qu, &kp Q) };
     };
 
     combos {
