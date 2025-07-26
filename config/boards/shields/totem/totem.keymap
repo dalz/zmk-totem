@@ -62,7 +62,7 @@
         };
 
     lingers {
-        li: linger { LINGER(&kp, &kp) };
+        LINGER(li, &kp, &kp)
 
         MACRO(Qu, <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>)
         LINGER(Q_or_Qu_impl, &Qu, &kp Q)
