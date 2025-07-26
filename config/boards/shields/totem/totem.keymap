@@ -66,7 +66,8 @@
         LINGER(li, &kp, &kp)
 
         MACRO(Q_, <&kp Q>)
-        MACRO(Qu, <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>)
+        MACRO(Qu, <&kp U>)
+        // MACRO(Qu, <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>)
         LINGER(Q_or_Qu_impl, &Q_, &Qu)
     };
 
