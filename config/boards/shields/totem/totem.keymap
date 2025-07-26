@@ -19,7 +19,7 @@
 
 #define LINGER(hold, tap)                 \
     compatible = "zmk,behavior-hold-tap"; \
-    binding-cells = <2>;                  \
+    #binding-cells = <2>;                 \
     flavor = "tap-preferred";             \
     tapping-term-ms = <200>;              \
     bindings = <hold>, <tap>;
@@ -28,7 +28,7 @@
   behaviors {
       hml: home_row_mod_left {
           compatible = "zmk,behavior-hold-tap";
-          binding-cells = <2>;
+          #binding-cells = <2>;
           flavor = "balanced";
           require-prior-idle-ms = <150>;
           tapping-term-ms = <280>;
@@ -41,7 +41,7 @@
 
       hmr: home_row_mod_right {
           compatible = "zmk,behavior-hold-tap";
-          binding-cells = <2>;
+          #binding-cells = <2>;
           flavor = "balanced";
           require-prior-idle-ms = <150>;
           tapping-term-ms = <280>;
@@ -68,20 +68,20 @@
     macros {
         Qu: Qu {
             compatible = "zmk,behavior-macro";
-            binding-cells = <0>;
+            #binding-cells = <0>;
             bindings = <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>;
         };
 
         Q_or_Qu: Q_or_Qu {
             compatible = "zmk,behavior-macro";
-            binding-cells = <0>;
+            #binding-cells = <0>;
             bindings = <&Q_or_Qu_impl 0 0>;
         };
 
     //     dbl: dbl {
     //         display-name = "double";
     //         compatible = "zmk,behavior-macro";
-    //         binding-cells = <1>;
+    //         #binding-cells = <1>;
     //         bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
     //                    <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
     //   };
