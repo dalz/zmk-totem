@@ -65,8 +65,8 @@
     lingers {
         LINGER(li, &kp, &kp)
 
-        // MACRO(Qu, <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>)
-        // LINGER(Q_or_Qu_impl, &Qu, &kp Q)
+        MACRO(Qu, <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>)
+        LINGER(Q_or_Qu_impl, &kp U, &kp Q)
     };
 
     combos {
@@ -85,7 +85,7 @@
     };
 
     macros {
-        // MACRO(Q_or_Qu, <&Q_or_Qu_impl 0 0>)
+        MACRO(Q_or_Qu, <&Q_or_Qu_impl 0 0>)
 
     //     dbl: dbl {
     //         display-name = "double";
@@ -104,7 +104,7 @@
 
                &kp F        &kp P        &kp D        &kp L        &kp X            &kp SEMI     &kp U        &kp O        &kp Y        &kp B
                &hml LGUI S  &hml LALT N  &hml LCTRL T &hml LSHFT H &kp K            &kp COMMA    &hmr RSHFT A &hmr RCTRL E &hmr RALT I  &hmr RGUI C
-  &studio_unlock /*&kp Z*/        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &li U Q // &Q_or_Qu
+  &studio_unlock /*&kp Z*/        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Q_or_Qu
                                          &kp TAB      &kp R        &lt NAV RET      &kp BSPC     &kp SPACE    &lt SYM UNDER
                         >;
         };
