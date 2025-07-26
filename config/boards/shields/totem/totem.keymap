@@ -1,15 +1,4 @@
-//
-//                                                        ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
-//                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
-//                                                        █   █  █  █   █  █  █   █  █  █   █
-//                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █
-//                                                               ▀      █  █  █     █▄█
-//                                                             ▀▀▀▀▀    █  █  █      ▀
-//                                                                      ▀  ▀  ▀
-//
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
+// -*- mode: c++ -*-
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -21,6 +10,19 @@
 #define SYM  2
 #define ADJ  3
 
+#define A_AC RA(Z)
+#define E_GR RA(F)
+#define E_AC RA(G)
+#define I_AC RA(V)
+#define O_AC RA(COMMA)
+#define U_AC RA(H)
+
+#define LINGER(args, hold, tap, ...)      \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <args>;              \
+    flavor = "tap-preferred";             \
+    bindings = <hold>, <tap>;
+
 / {
   behaviors {
       hml: home_row_mod_left {
@@ -31,9 +33,11 @@
           tapping-term-ms = <280>;
           // quick-tap-ms = <175>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>;
+          hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
           hold-trigger-on-release;
+          hold-while-undecided;
       };
+
       hmr: home_row_mod_right {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
@@ -42,9 +46,13 @@
           tapping-term-ms = <280>;
           // quick-tap-ms = <175>;
           bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+          hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>;
           hold-trigger-on-release;
+          hold-while-undecided;
       };
+
+      li: linger       { LINGER(2, &kp, &kp)   };
+      Q_or_Qu: Q_or_Qu { LINGER(0, &Qu, &kp Q) };
     };
 
     combos {
@@ -56,7 +64,12 @@
         };
     };
 
-    // macros {
+    macros {
+        Qu: Qu {
+            display-name = "Qu";
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp Q>, <&macro_release &kp LSHFT> , <&macro_release &kp RSHFT>, <&kp U>;
+        };
     //     dbl: dbl {
     //         display-name = "double";
     //         compatible = "zmk,behavior-macro";
@@ -64,7 +77,7 @@
     //         bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
     //                    <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
     //   };
-    // };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -74,7 +87,7 @@
 
                &kp F        &kp P        &kp D        &kp L        &kp X            &kp SEMI     &kp U        &kp O        &kp Y        &kp B
                &hml LGUI S  &hml LALT N  &hml LCTRL T &hml LSHFT H &kp K            &kp COMMA    &mt RSHFT A  &mt RCTRL E  &mt RALT I   &mt RGUI C
-  &none        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &none
+  &kp Z        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Q_or_Qu
                                          &kp TAB      &kp R        &lt NAV RET      &kp BSPC     &kp SPACE    &lt SYM UNDER
                         >;
         };
