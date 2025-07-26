@@ -17,11 +17,11 @@
 #define O_AC RA(COMMA)
 #define U_AC RA(H)
 
-#define MACRO(name, keys)                  \
+#define MACRO(name, ...)                   \
     name: name {                           \
         compatible = "zmk,behavior-macro"; \
         #binding-cells = <0>;              \
-        bindings = keys;                   \
+        bindings = __VA_ARGS__;            \
     };
 
 #define LINGER(name, hold, tap)               \
