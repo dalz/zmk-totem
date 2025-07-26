@@ -53,7 +53,7 @@
       };
 
       li: linger { LINGER(&kp, &kp) };
-      Q_or_Qu_impl: Q_or_Qu_impl { LINGER(&Qu, &kp Q) };
+      // Q_or_Qu_impl: Q_or_Qu_impl { LINGER(&Qu, &kp Q) };
     };
 
     combos {
@@ -72,11 +72,11 @@
             bindings = <&kp Q>, <&macro_release &kp LSHFT &kp RSHFT>, <&kp U>;
         };
 
-        Q_or_Qu: Q_or_Qu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&Q_or_Qu_impl 0 0>;
-        };
+        // Q_or_Qu: Q_or_Qu {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings = <&Q_or_Qu_impl 0 0>;
+        // };
 
     //     dbl: dbl {
     //         display-name = "double";
@@ -95,7 +95,7 @@
 
                &kp F        &kp P        &kp D        &kp L        &kp X            &kp SEMI     &kp U        &kp O        &kp Y        &kp B
                &hml LGUI S  &hml LALT N  &hml LCTRL T &hml LSHFT H &kp K            &kp COMMA    &mt RSHFT A  &mt RCTRL E  &mt RALT I   &mt RGUI C
-  &kp Z        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Q_or_Qu
+  &kp Z        &kp V        &kp W        &kp G        &kp M        &kp J            &kp MINUS    &kp DOT      &kp APOS     &kp EQUAL    &kp SLASH    &Qu // &Q_or_Qu
                                          &kp TAB      &kp R        &lt NAV RET      &kp BSPC     &kp SPACE    &lt SYM UNDER
                         >;
         };
