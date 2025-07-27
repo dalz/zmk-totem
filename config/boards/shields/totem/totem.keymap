@@ -31,7 +31,7 @@
         flavor = "tap-preferred";             \
         tapping-term-ms = <200>;              \
         bindings = <hold>, <tap>;             \
-        hold-trigger-key-positions = <>;      \
+        hold-trigger-key-positions = <0>;     \
     };
 
 #define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
