@@ -24,14 +24,14 @@
         bindings = __VA_ARGS__;            \
     };
 
-#define LINGER(name, hold, tap)               \
+#define LINGER(name, on_hold, on_tap)         \
     name: name {                              \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>;                 \
         flavor = "tap-preferred";             \
         tapping-term-ms = <200>;              \
-        bindings = <hold>, <tap>;             \
-        hold-trigger-key-positions = <0>;     \
+        bindings = <on_hold>, <on_tap>;       \
+        hold-trigger-key-positions = <>;      \
     };
 
 #define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
