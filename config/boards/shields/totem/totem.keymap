@@ -104,9 +104,9 @@
             bindings = <
 
 	&kp F	&kp P	&kp D	&kp L	&kp X		&kp SEMI	&kp U	&kp O	&kp Y	&kp B
-	&hml LGUI S	&hml LALT N	&hml LCTRL T	&hml LSHFT H	&kp K		&kp COMMA	&hmr RSHFT A	&hmr RCTRL E	&hmr RALT I	&hmr RGUI C
+	&hml LGUI S	&hml LALT N	&hml LCTRL T	&hml LSHFT H	&kp K		&kp COMMA	&hmr RSHFT A	&hmr RCTRL E	&hmr LALT I	&hmr RGUI C
 &kp Z	&kp V	&kp W	&kp G	&kp M	&kp J		&kp MINUS	&kp DOT	&kp APOS	&kp EQUAL	&kp SLASH	&Q_or_Qu
-			&kp BSPC	&kp R	&lt NAV RET		&kp key_repeat	&kp SPACE	&lt SYM UNDER
+			&kp BSPC	&kp R	&lt NAV RET		&key_repeat	&kp SPACE	&lt SYM UNDER
             >;
         };
 
