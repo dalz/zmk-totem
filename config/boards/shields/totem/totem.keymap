@@ -33,6 +33,8 @@
         bindings = <hold>, <tap>;             \
     };
 
+#define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -66,7 +68,7 @@
         LINGER(li, &kp, &kp)
 
         MACRO(Q_, <&kp Q>)
-        MACRO(Qu, <&kp Q>, <&macro_release &kp LSHIFT &kp RSHIFT>, <&kp U>)
+        MACRO(Qu, <&macro_tap &kp Q>, unshift, <&macro_tap &kp U>)
         LINGER(Q_or_Qu_impl, &Q_, &Qu)
     };
 
