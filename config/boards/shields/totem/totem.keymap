@@ -5,17 +5,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include "keys.h"
+
 #define BASE 0
 #define NAV  1
 #define SYM  2
 #define ADJ  3
-
-#define A_AC RA(Z)
-#define E_GR RA(F)
-#define E_AC RA(G)
-#define I_AC RA(V)
-#define O_AC RA(COMMA)
-#define U_AC RA(H)
 
 #define MACRO(name, ...)                   \
     name: name {                           \
@@ -34,21 +29,6 @@
     };
 
 #define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
-
-enum keys {
-       LPT, LRT, LMT, LIT, LJT,    RJT, RIT, RMT, RRT, RPT,
-       LPM, LRM, LMM, LIM, LJM,    RJM, RIM, RMM, RRM, RPM,
-  LPS, LPB, LRB, LMB, LIB, LJB,    RJB, RIB, RMB, RRB, RPB, RPS,
-                 LTI, LTM, LTO,    RTO, RTM, RTI,
-}
-
-#define KEYS_LEFT_MAIN LPT LRT LMT LIT LJT LPM LRM LMM LIM LJM LPS LPB LRB LMB LIB LJB
-#define KEYS_LEFT_THUMB LTI LTM LTO
-#define KEYS_LEFT KEYS_LEFT_MAIN KEYS_LEFT_THUMB
-
-#define KEYS_RIGHT_MAIN RPT RRT RMT RIT RJT RPM RRM RMM RIM RJM RPS RPB RRB RMB RIB RJB
-#define KEYS_RIGHT_THUMB RTI RTM RTO
-#define KEYS_RIGHT KEYS_RIGHT_MAIN KEYS_RIGHT_THUMB
 
 
 / {
