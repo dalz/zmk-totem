@@ -1,4 +1,4 @@
-// -*- mode: c++ -*-
+// -*- mode: c++; tab-width: 16 -*-
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -31,10 +31,25 @@
         flavor = "tap-preferred";             \
         tapping-term-ms = <200>;              \
         bindings = <on_hold>, <on_tap>;       \
-        hold-trigger-key-positions = <>;      \
     };
 
 #define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
+
+enum keys {
+       LPT, LRT, LMT, LIT, LJT,    RJT, RIT, RMT, RRT, RPT,
+       LPM, LRM, LMM, LIM, LJM,    RJM, RIM, RMM, RRM, RPM,
+  LPS, LPB, LRB, LMB, LIB, LJB,    RJB, RIB, RMB, RRB, RPB, RPS,
+                 LTI, LTM, LTO,    RTO, RTM, RTI,
+}
+
+#define KEYS_LEFT_MAIN LPT LRT LMT LIT LJT LPM LRM LMM LIM LJM LPS LPB LRB LMB LIB LJB
+#define KEYS_LEFT_THUMB LTI LTM LTO
+#define KEYS_LEFT KEYS_LEFT_MAIN KEYS_LEFT_THUMB
+
+#define KEYS_RIGHT_MAIN RPT RRT RMT RIT RJT RPM RRM RMM RIM RJM RPS RPB RRB RMB RIB RJB
+#define KEYS_RIGHT_THUMB RTI RTM RTO
+#define KEYS_RIGHT KEYS_RIGHT_MAIN KEYS_RIGHT_THUMB
+
 
 / {
     behaviors {
@@ -46,7 +61,7 @@
             tapping-term-ms = <280>;
             // quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+            hold-trigger-key-positions = <KEYS_RIGHT>;
             hold-trigger-on-release;
             hold-while-undecided;
         };
@@ -59,7 +74,7 @@
             tapping-term-ms = <280>;
             // quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>;
+            hold-trigger-key-positions = <KEYS_LEFT>;
             hold-trigger-on-release;
             hold-while-undecided;
         };
@@ -78,12 +93,12 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <LPT LRT>;
             bindings = <&kp ESC>;
         };
 
         combo_studio_unlock {
-            key-positions = <10 20>;
+            key-positions = <LPS LPM>;
             bindings = <&studio_unlock>;
         };
     };
@@ -107,7 +122,7 @@
 	&kp F	&kp P	&kp D	&kp L	&kp X		&kp SEMI	&kp U	&kp O	&kp Y	&kp B
 	&hml LGUI S	&hml LALT N	&hml LCTRL T	&hml LSHFT H	&kp K		&kp COMMA	&hmr RSHFT A	&hmr RCTRL E	&hmr LALT I	&hmr RGUI C
 &kp Z	&kp V	&kp W	&kp G	&kp M	&kp J		&kp MINUS	&kp DOT	&kp APOS	&kp EQUAL	&kp SLASH	&Q_or_Qu 0 0
-			&kp BSPC	&kp R	&lt NAV RET		&key_repeat	&kp SPACE	&lt SYM UNDER // or tab?
+			&key_repeat	&kp R	&lt SYM TAB		&lt NAV BSPC	&kp SPACE	&kp RET
             >;
         };
 
