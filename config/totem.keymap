@@ -80,23 +80,13 @@
         base_layer {
             display-name = "Base";
             bindings = <
-       &kp F        &kp P        &kp D         &kp L         &kp X          &kp SEMI      &kp U         &kp O         &kp Y        &kp B
-       &hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT H  &kp K          &kp COMMA     &hmr RSHFT A  &hmr RCTRL E  &hmr LALT I  &hmr RGUI C
-&kp Z  &kp V        &kp W        &kp G         &kp M         &kp J          &kp MINUS     &kp DOT       &kp APOS      &kp EQUAL    &kp SLASH    &qu_or_kp Q 0
-                                 &key_repeat   &kp R         &lt SYM TAB    &lt NAV BSPC  &kp SPACE     &kp RET
+       &kp F        &kp P        &kp D         &kp L         &kp X        &kp SEMI    &kp U         &kp O         &kp Y        &kp B
+       &hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT H  &kp K        &kp COMMA   &hmr RSHFT A  &hmr RCTRL E  &hmr LALT I  &hmr RGUI C
+&kp Z  &kp V        &kp W        &kp G         &kp M         &kp J        &kp MINUS   &kp DOT       &kp APOS      &kp EQUAL    &kp SLASH    &qu_or_kp Q 0
+                                 &key_repeat   &kp R         &lt 0 TAB    &lt 0 BSPC  &kp SPACE     &kp RET
             >;
-        };
 
-        nav_layer {
-            display-name = "Navigation";
-            status = "reserved";
+            label = "Base";
         };
-
-        sym_layer {
-            display-name = "Symbols";
-            status = "reserved";
-        };
-
-        extra_layer { status = "reserved"; };
     };
 };
