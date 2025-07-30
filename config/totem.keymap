@@ -52,15 +52,10 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-
-        combo_studio_unlock {
-            key-positions = <20 10>;
-            bindings = <&studio_unlock>;
-        };
     };
 
     macros {
-        qu: Qu {
+        qu: qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
