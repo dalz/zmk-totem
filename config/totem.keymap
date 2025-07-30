@@ -52,6 +52,11 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+
+        combo_q {
+            bindings = <&kp Q>;
+            key-positions = <31 36>;
+        };
     };
 
     macros {
@@ -77,7 +82,7 @@
             bindings = <
        &kp F        &kp P        &kp D         &kp L         &kp X        &kp SEMI    &kp U         &kp O         &kp Y        &kp B
        &hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT H  &kp K        &kp COMMA   &hmr RSHFT A  &hmr RCTRL E  &hmr LALT I  &hmr RGUI C
-&kp Z  &kp V        &kp W        &kp G         &kp M         &kp J        &kp MINUS   &kp DOT       &kp APOS      &kp EQUAL    &kp SLASH    &qu_or_kp Q 0
+&kp Z  &kp V        &kp W        &kp G         &kp M         &kp J        &kp MINUS   &kp DOT       &kp APOS      &kp EQUAL    &kp SLASH    &qu
                                  &key_repeat   &kp R         &lt 0 TAB    &lt 0 BSPC  &kp SPACE     &kp RET
             >;
 
