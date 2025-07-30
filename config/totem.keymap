@@ -2,9 +2,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
 #include "keys.h"
 
 #define BASE 0
@@ -18,7 +15,6 @@
         #binding-cells = <0>;              \
         bindings = __VA_ARGS__;            \
     };
-
 #define LINGER(name, on_hold, on_tap)         \
     name: name {                              \
         compatible = "zmk,behavior-hold-tap"; \
@@ -30,7 +26,6 @@
 
 #define unshift <&macro_release &kp LSHIFT &kp RSHIFT>
 
-
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -39,8 +34,11 @@
             flavor = "balanced";
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
+
             // quick-tap-ms = <175>;
+
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_RIGHT>;
             hold-trigger-on-release;
             hold-while-undecided;
@@ -52,11 +50,24 @@
             flavor = "balanced";
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
+
             // quick-tap-ms = <175>;
+
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_LEFT>;
             hold-trigger-on-release;
             hold-while-undecided;
+        };
+
+        q_or_qu: q_or_qu {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Q_OR_QU";
+            bindings = <&kp>, <&qu>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -72,54 +83,65 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <LPT LRT>;
+            key-positions = <LPT LRT 0 1>;
             bindings = <&kp ESC>;
         };
 
         combo_studio_unlock {
-            key-positions = <LPS LPM>;
+            key-positions = <LPS LPM 20 10>;
             bindings = <&studio_unlock>;
         };
     };
 
     macros {
-    //     dbl: dbl {
-    //         display-name = "double";
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <1>;
-    //         bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
-    //                    <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
-    //   };
+        //     dbl: dbl {
+        //         display-name = "double";
+        //         compatible = "zmk,behavior-macro";
+        //         #binding-cells = <1>;
+        //         bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>,
+        //                    <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
+        //   };
+
+        qu: Qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp Q>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp U>;
+
+            label = "QU";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
+
         base_layer {
             display-name = "Base";
             bindings = <
-
-	&kp F	&kp P	&kp D	&kp L	&kp X		&kp SEMI	&kp U	&kp O	&kp Y	&kp B
-	&hml LGUI S	&hml LALT N	&hml LCTRL T	&hml LSHFT H	&kp K		&kp COMMA	&hmr RSHFT A	&hmr RCTRL E	&hmr LALT I	&hmr RGUI C
-&kp Z	&kp V	&kp W	&kp G	&kp M	&kp J		&kp MINUS	&kp DOT	&kp APOS	&kp EQUAL	&kp SLASH	&kp_or_Qu Q Q
-			&key_repeat	&kp R	&lt SYM TAB		&lt NAV BSPC	&kp SPACE	&kp RET
+       &kp F        &kp P        &kp D         &kp L         &kp X          &kp SEMI      &kp U         &kp O         &kp Y        &kp B
+       &hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT H  &kp K          &kp COMMA     &hmr RSHFT A  &hmr RCTRL E  &hmr LALT I  &hmr RGUI C
+&kp Z  &kp V        &kp W        &kp G         &kp M         &kp J          &kp MINUS     &kp DOT       &kp APOS      &kp EQUAL    &kp SLASH    &q_or_qu Q 0
+                                 &key_repeat   &kp R         &lt SYM TAB    &lt NAV BSPC  &kp SPACE     &kp RET
             >;
         };
 
         nav_layer {
-          display-name = "Navigation";
-          status = "reserved";
+            display-name = "Navigation";
+            status = "reserved";
         };
 
         sym_layer {
-          display-name = "Symbols";
-          status = "reserved";
+            display-name = "Symbols";
+            status = "reserved";
         };
 
-        extra_layer {
-          status = "reserved";
-        };
+        extra_layer { status = "reserved"; };
 
-/*
+        /*
                 nav_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 display-name = "NAVI"                              ;
@@ -194,5 +216,5 @@ display-name = "ADJ"                               ;
                                         &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 }; */
-        };
+    };
 };
