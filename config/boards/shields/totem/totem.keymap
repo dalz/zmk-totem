@@ -63,9 +63,8 @@
     lingers {
         LINGER(li, &kp, &kp)
 
-        MACRO(Q_, <&kp Q>)
         MACRO(Qu, <&macro_tap &kp Q>, unshift, <&macro_tap &kp U>)
-        LINGER(Q_or_Qu, &Q_, &Qu)
+        LINGER(kp_or_Qu, &kp, &Qu)
     };
 
     combos {
@@ -101,7 +100,7 @@
 
 	&kp F	&kp P	&kp D	&kp L	&kp X		&kp SEMI	&kp U	&kp O	&kp Y	&kp B
 	&hml LGUI S	&hml LALT N	&hml LCTRL T	&hml LSHFT H	&kp K		&kp COMMA	&hmr RSHFT A	&hmr RCTRL E	&hmr LALT I	&hmr RGUI C
-&kp Z	&kp V	&kp W	&kp G	&kp M	&kp J		&kp MINUS	&kp DOT	&kp APOS	&kp EQUAL	&kp SLASH	&Q_or_Qu 0 0
+&kp Z	&kp V	&kp W	&kp G	&kp M	&kp J		&kp MINUS	&kp DOT	&kp APOS	&kp EQUAL	&kp SLASH	&kp_or_Qu Q Q
 			&key_repeat	&kp R	&lt SYM TAB		&lt NAV BSPC	&kp SPACE	&kp RET
             >;
         };
